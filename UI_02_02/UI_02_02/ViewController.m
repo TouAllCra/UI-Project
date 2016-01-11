@@ -27,9 +27,13 @@ int logtag = 1000;
     view1.translatesAutoresizingMaskIntoConstraints = NO;
     
     [self.view addSubview:view1];
+        //left->left
         NSLayoutConstraint *contsranint1 = [NSLayoutConstraint constraintWithItem:view1 attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:[self.view viewWithTag:logtag]attribute:NSLayoutAttributeLeft multiplier:1 constant:10];
+        //Top->self.view.Top
     NSLayoutConstraint *constranint2 = [NSLayoutConstraint constraintWithItem:view1 attribute:NSLayoutAttributeTop relatedBy:NSLayoutRelationEqual toItem:self.view attribute:NSLayoutAttributeTop multiplier:1 constant:10];
+        //Right->Right
     NSLayoutConstraint *constranint3 = [NSLayoutConstraint constraintWithItem:view1 attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:[self.view viewWithTag:logtag] attribute:NSLayoutAttributeRight multiplier:1 constant:-width*3];
+        //Height->height
     NSLayoutConstraint *constraint4 = [NSLayoutConstraint constraintWithItem:view1 attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil  attribute:NSLayoutAttributeHeight multiplier:10 constant:0];
     
     [self.view addConstraint:contsranint1];
